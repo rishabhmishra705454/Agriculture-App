@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainUser.MapActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="bottomNa"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/bottom_nav_backgraound"
+        android:elevation="8dp"
+        app:elevation="8dp"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@drawable/bottom_nav_selector"
+        app:itemTextColor="@drawable/bottom_nav_selector"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_above="@id/map_bottom_sheet">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="0dp"
+            android:layout_height="match_parent" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/map_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/white"
+        android:layout_above="@id/bottom_navigation">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome Rishabh "
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:padding="10dp"/>
+
+
+
+        <Button
+            android:id="@+id/bottom_sheet_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/button_background"
+            android:text="Choose what you want ?"
+            android:textAllCaps="false"/>
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top_bottom_bar"
+        android:layout_width="match_parent"
+        android:elevation="2dp"
+        android:layout_height="25dp"
+        android:layout_above="@id/map_bottom_sheet"
+        android:background="@drawable/service_bottom_layout_background">
+
+    </RelativeLayout>
+
+</RelativeLayout>

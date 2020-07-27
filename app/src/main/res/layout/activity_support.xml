@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Menu.Support">
+
+
+    <RelativeLayout
+        android:id="@+id/support_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorSecondary">
+
+        <ImageView
+            android:id="@+id/support_back_pressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="15dp"
+
+            android:src="@drawable/white_back_icon" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/refer_back_pressed"
+            android:fontFamily="@font/brandon_grotesque_black"
+            android:text="Support"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_below="@id/support_action_bar"
+        android:background="@color/colorSecondary">
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:elevation="2dp"
+        android:layout_marginTop="210dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <TextView
+                android:id="@+id/support_faq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+
+                android:text="Frequently asked questions"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/next_icon"
+               android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/support_faq"/>
+            <view
+                android:layout_width="250dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="1dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                />
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/support_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="30dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

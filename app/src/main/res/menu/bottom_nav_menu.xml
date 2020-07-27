@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboard"
+        android:enabled="true"
+        android:icon="@drawable/dashboard_icon"
+        android:title="Home"/>
+    <item
+        android:id="@+id/service"
+        android:enabled="true"
+        android:icon="@drawable/goal_icon"
+        android:title="Services"/>
+
+    <item
+        android:id="@+id/menu"
+        android:enabled="true"
+        android:icon="@drawable/profile_icon"
+        android:title="Profile"/>
+</menu>

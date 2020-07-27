@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainUser.MenuActivity">
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="bottomNa"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/bottom_nav_backgraound"
+        android:elevation="8dp"
+        app:elevation="8dp"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@drawable/bottom_nav_selector"
+        app:itemTextColor="@drawable/bottom_nav_selector"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <ScrollView
+        android:layout_above="@id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/dashboard_relative_top_nav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="1dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_icon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    android:src="@drawable/profile_icon"
+                    app:civ_border_width="1dp" />
+
+
+                <TextView
+                    android:id="@+id/user_fullname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="Rishabh Mishra"
+                    android:textColor="@color/black"
+                    android:textSize="24dp" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_relative_view"
+                android:layout_width="300dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dashboard_relative_top_nav"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/border_background">
+
+                <EditText
+                    android:id="@+id/user_phone_no"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone Number"
+                    android:textSize="16sp"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:textIsSelectable="false"
+                    android:padding="15dp"
+                    android:clickable="false"
+
+                    android:background="@drawable/border_background"
+
+                    />
+                <EditText
+                    android:id="@+id/_user_email"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:textSize="16sp"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:textIsSelectable="false"
+                    android:clickable="false"
+                    android:hint="Email"
+                    android:background="@drawable/border_background"
+
+                  />
+
+                <EditText
+                    android:id="@+id/user_pincode"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_height="wrap_content"
+                    android:hint="Pincode"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:textIsSelectable="false"
+                    android:clickable="false"
+                    android:padding="15dp"
+                    android:background="@drawable/border_background"
+                   />
+
+                <EditText
+                    android:id="@+id/user_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:textSize="16sp"
+
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:textIsSelectable="false"
+                    android:textColor="@color/colorSecondaryText"
+                    android:hint="Phone Address"
+                    android:padding="15dp"
+                    android:background="@drawable/border_background" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_relative_view"
+                android:layout_marginTop="30dp"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/relative_payment_History"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border_background"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/agrocab_history_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/agrocab_history_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/agrocab_history_icon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/muli"
+                        android:gravity="center"
+                        android:text="Agrocabs\nHistory"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relati"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/relative_payment_History"
+                    android:background="@drawable/border_background"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/payment_history_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/payment_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/payment_history_icon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/muli"
+                        android:gravity="center"
+                        android:text="Payments"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_layout_payment"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/profile_offer"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border_background"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/agrocab_offer_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/agrocab_history_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/agrocab_offer_icon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/muli"
+                        android:gravity="center"
+                        android:text="Offers"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relative"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/profile_offer"
+                    android:background="@drawable/border_background"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/payment_offer_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/payment_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/payment_offer_icon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/muli"
+                        android:gravity="center"
+                        android:text="Support"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorError">@color/colorError</item>
+        <item name="background">@color/colorBackground</item>
+    </style>
+
+    <!--menu style-->
+    <style name="navigation_theme">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/black</item>
+    </style>
+
+    <!--user dashboard-->
+
+    <style name="dashboard">
+        <item name="android:statusBarColor">@color/colorSecondary</item>
+
+    </style>
+
+    <style name="BottonSheetDialogTheme"  parent="Theme.Design.Light.BottomSheetDialog">
+
+    <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+
+
+
+</resources>

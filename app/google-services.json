@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "900424773064",
+    "firebase_url": "https://farming-project-d7175.firebaseio.com",
+    "project_id": "farming-project-d7175",
+    "storage_bucket": "farming-project-d7175.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900424773064:android:a226b58f170aa3b95824fd",
+        "android_client_info": {
+          "package_name": "com.rishabh.companyproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900424773064-7cmklj1th2b99fj7sa7383v5uqma3mmk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALOcBaGVXt5IJ2BF8pmP8v-2vjj4Butcs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900424773064-7cmklj1th2b99fj7sa7383v5uqma3mmk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

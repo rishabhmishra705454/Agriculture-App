@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".User.MachineOwner.MachineOwnerApplyPage2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/page_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:transitionName="transition_top_bar">
+
+            <ImageView
+
+                android:id="@+id/partner_page2_back_btn"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/back_btn_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/notification_back_btn"
+                android:fontFamily="@font/muli_black"
+                android:text="Basic Details"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarSize="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="300dp"
+                android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/detail_adhar_number"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/main_description"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:hint="Aadhar Card Number"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:counterTextColor="@color/black"
+                app:hintTextColor="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLength="12"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/detail_machinary"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/main_description"
+                android:layout_margin="20dp"
+                android:layout_marginTop="30dp"
+                android:hint="Add Your Machinary"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:counterTextColor="@color/black"
+                app:hintTextColor="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/compine_chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:checkable="true"
+                    android:text="Combine"
+                    app:chipStrokeColor="@color/colorPrimary" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tractor_chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/compine_chip"
+                    android:checkable="true"
+                    android:text="Tractor"
+                    app:chipStrokeColor="@color/colorPrimary" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tractor_cultivator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/tractor_chip"
+                    android:checkable="true"
+                    android:text="Cultivator"
+                    app:chipStrokeColor="@color/colorPrimary" />
+
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tractor_rotabator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/tractor_cultivator"
+                    android:checkable="true"
+                    android:text="Rotavator"
+                    app:chipStrokeColor="@color/colorPrimary" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="300dp"
+                android:gravity="center">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tractor_trolly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:checkable="true"
+                    android:text="Tractor Trolly"
+                    app:chipStrokeColor="@color/colorPrimary" />
+
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tractor_harrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/tractor_trolly"
+                    android:checkable="true"
+                    android:text="Harrow"
+                    app:chipStrokeColor="@color/colorPrimary" />
+
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_truck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/tractor_harrow"
+                    android:checkable="true"
+                    android:text="Farm Truck"
+                    style="@style/Widget.MaterialComponents.Chip.Entry"
+                    app:chipStrokeColor="@color/colorPrimary" />
+
+
+            </RelativeLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+</LinearLayout>
+
+
+<LinearLayout
+android:background="@color/white"
+android:baselineAligned="true"
+android:gravity="center"
+android:layout_alignParentBottom="true"
+android:layout_height="70dp"
+
+android:layout_marginBottom="0dp"
+android:layout_width="match_parent"
+android:padding="10dp">
+
+<Button
+    android:background="@drawable/button_background"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_width="350dp"
+    android:text="Submit Details"
+    android:onClick="callMachineOwnerApplySuccess"
+    android:textColor="@color/white"
+    android:textSize="18dp" />
+
+</LinearLayout>
+
+
+    </RelativeLayout>

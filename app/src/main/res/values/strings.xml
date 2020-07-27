@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">balle balle</string>
+
+    <!--onboarding strings-->
+
+    <!--first screen-->
+    <string name="our_mission_title">Our Mission</string>
+    <string name="our_mission_desc">It is a Non profitable company which help poor  people and farmers.Our aim to solve problems faced  during farming.</string>
+
+    <!--second screen-->
+    <string name="harvesting_crop_title">Harvesting Crops</string>
+    <string name="harvesting_crop_desc">If you or your family have a piece of Land Then you are at right place. Find your nearby running Combine machine </string>
+
+    <!--third screen-->
+    <string name="sell_crop_title">Sell Crop Directely</string>
+    <string name="sell_crop_desc">Our Company launch new service in farming sector. We directly buy crop from farmers field. Do Not Panic! We do everything</string>
+
+    <!--fourth screen-->
+    <string name="search_machine_title">Search Machine</string>
+    <string name="search_machine_desc">Locate machine near you to make your work easier in reliable price. Time to enjoy now...</string>
+
+    <string name="let_get_started_btn">LETS GET STARTED</string>
+
+
+    <!--Button-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="let_get_started">Skip</string>
+
+    <!--String-->
+    <string name="search_text">Search Agrocabs...</string>
+
+    <string name="shop">Shop</string>
+    <string name="price">Price List</string>
+    <string name="weather">Weather </string>
+    <string name="fertilizer">Fertilizer</string>
+
+
+    <string name="featured_agrocabs">All Featured Products</string>
+    <string name="featured_desc">All the agrocabs are fully featured and have top demand in market</string>
+    <string name="jai_jawan_jai_kisan">Jai Jawan! Jai Kisan</string>
+    <string name="new_generation_farming">New Generation Farming...</string>
+
+
+    <!--Menu Heading-->
+
+    <string name="home">Home</string>
+    <string name="join_us">ADD AGROCABS</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="share">Share</string>
+    <string name="rate_us">Rate Us</string>
+
+    <string name="menu_slogan">New Generation Farming</string>
+
+    <!--TODO: Cabers panel Setting-->
+
+    <!--General Setting-->
+
+    <string name="sign_up">Sign Up</string>
+    <string name="caber_heading">Grow\nYour Business</string>
+    <string name="caber_tag_line">We will help you to grow your business using online services!</string>
+    <string name="create_account">Create\nAccount</string>
+    <string name="how_we_work">How we work?</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forget_password">Forget password</string>
+
+
+    <string name="full_name">Full Name</string>
+    <string name="user_name">Username</string>
+    <string name="e_mail">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+
+
+    <!--Oto screen-->
+
+    <string name="otp_code_text">Co\nde</string>
+    <string name="otp_verification_text">Verification</string>
+    <string name="otp_description_text">Enter one time password sent on \n+91-7054545684</string>
+    <string name="make_selection">Make Selection</string>
+    <string name="forget_password_details">Select which contact detail should we use to reset password?</string>
+    <string name="new_cridentials">New\nCredentials</string>
+    <string name="new_credential_detail">Your identity has been verified! set your new password</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="customer_support">Customer Support</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_cab_tracking_map">Map</string>
+
+    <!-- main slider of dashboard -->
+
+    <!-- titles-->
+    <string name="slider_title1">Pay Digital With Us</string>
+    <string name="slider_title2">No Need To Pay Money</string>
+    <string name="slider_title3">Track Realtime Machine </string>
+    <string name="slider_title4">Earn More With Us</string>
+
+    <!-- headings-->
+
+    <string name="slider_description_1">We accept all kind of online payments.</string>
+    <string name="slider_description_2"> You give grains at place of money. </string>
+    <string name="slider_description_3">You can check all kind machinary on map.</string>
+    <string name="slider_description_4">Farmers make partnership with us earn money.</string>
+
+
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#D5FFFFFF"
+    android:layout_height="wrap_content"
+    tools:context=".CombineActivities.BottomSheetMaoFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/muli_black"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:textSize="16sp"
+        android:text="We do everything for you :"/>
+
+
+    <Button
+        android:id="@+id/choose_services_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/muli_semibold"
+        android:elevation="0dp"
+        android:focusable="false"
+        android:background="@drawable/border_background"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="Choose what you want ?"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/selling_crop_btn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="8dp"
+        app:strokeColor="@color/colorPrimary"
+        android:layout_marginLeft="20dp"
+        android:layout_margin="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginRight="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:fontFamily="@font/muli_semibold"
+            android:layout_gravity="center"
+            android:text="Continue for selling grains"/>
+    </com.google.android.material.card.MaterialCardView>
+    <!--
+    <Button
+        android:id="@+id/selling_crop_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="10dp"
+        android:text="Continue for selling grains !"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:textAllCaps="false"/>
+        -->
+
+</LinearLayout>
