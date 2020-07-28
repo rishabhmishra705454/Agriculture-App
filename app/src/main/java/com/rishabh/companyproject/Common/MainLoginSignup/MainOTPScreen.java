@@ -27,10 +27,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.rishabh.companyproject.CombineActivities.LocationPermission;
+import com.rishabh.companyproject.Common.LocationPermission;
 import com.rishabh.companyproject.Database.SessionManager;
-import com.rishabh.companyproject.MainUser.Dashboard;
-import com.rishabh.companyproject.Menu.UserProfile;
+import com.rishabh.companyproject.Profile.UserProfile;
 import com.rishabh.companyproject.R;
 
 import java.util.concurrent.TimeUnit;

@@ -1,4 +1,4 @@
-package com.rishabh.companyproject.User.MachineOwner;
+package com.rishabh.companyproject.Home.MachineApplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.rishabh.companyproject.MainUser.Dashboard;
+import com.rishabh.companyproject.Home.Dashboard;
 import com.rishabh.companyproject.R;
 
 public class MachineOwnerApplySuccess extends AppCompatActivity {

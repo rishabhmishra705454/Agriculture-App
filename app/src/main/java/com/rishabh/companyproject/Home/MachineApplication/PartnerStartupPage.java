@@ -1,4 +1,4 @@
-package com.rishabh.companyproject.User.MachineOwner;
+package com.rishabh.companyproject.Home.MachineApplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 

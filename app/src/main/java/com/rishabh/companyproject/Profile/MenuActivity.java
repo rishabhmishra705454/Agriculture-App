@@ -1,4 +1,4 @@
-package com.rishabh.companyproject.MainUser;
+package com.rishabh.companyproject.Profile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,9 +14,9 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.rishabh.companyproject.Database.SessionManager;
-import com.rishabh.companyproject.Map.MapsFragmentCombineTracking;
-import com.rishabh.companyproject.Menu.ReferAndEarn;
+import com.rishabh.companyproject.Home.Dashboard;
 import com.rishabh.companyproject.R;
+import com.rishabh.companyproject.Services.MapActivity;
 
 import java.util.HashMap;
 
@@ -87,7 +87,7 @@ public class MenuActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.dashboard:
                         startActivity(new Intent(getApplicationContext()
-                                ,Dashboard.class));
+                                , Dashboard.class));
                         finish();
                         overridePendingTransition(0,0);
                         return true;

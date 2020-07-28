@@ -1,4 +1,4 @@
-package com.rishabh.companyproject.User.MachineOwner;
+package com.rishabh.companyproject.Home.MachineApplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,6 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rishabh.companyproject.Database.MachineOwnerHelperClass;
-import com.rishabh.companyproject.Database.UserHelperClass;
 import com.rishabh.companyproject.R;
 
 public class MachineOwnerApplyPage2 extends AppCompatActivity {

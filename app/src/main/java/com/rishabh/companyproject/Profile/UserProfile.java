@@ -1,13 +1,10 @@
-package com.rishabh.companyproject.Menu;
+package com.rishabh.companyproject.Profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -17,11 +14,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.rishabh.companyproject.CombineActivities.LocationPermission;
-import com.rishabh.companyproject.Common.MainLoginSignup.MainOTPScreen;
+import com.rishabh.companyproject.Common.LocationPermission;
 import com.rishabh.companyproject.Database.SessionManager;
 import com.rishabh.companyproject.Database.UserHelperClass;
-import com.rishabh.companyproject.MainUser.Dashboard;
 import com.rishabh.companyproject.R;
 
 public class UserProfile extends AppCompatActivity {

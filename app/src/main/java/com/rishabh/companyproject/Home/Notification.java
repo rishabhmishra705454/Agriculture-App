@@ -1,4 +1,4 @@
-package com.rishabh.companyproject.User;
+package com.rishabh.companyproject.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 

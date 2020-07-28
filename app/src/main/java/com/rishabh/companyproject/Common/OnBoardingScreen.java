@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.rishabh.companyproject.Common.MainLoginSignup.MainLogin;
 import com.rishabh.companyproject.HelperClass.SliderAdapter;
-import com.rishabh.companyproject.MainUser.Dashboard;
 import com.rishabh.companyproject.R;
 
 public class OnBoardingScreen extends AppCompatActivity {

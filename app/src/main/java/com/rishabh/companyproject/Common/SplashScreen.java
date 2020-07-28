@@ -1,20 +1,15 @@
 package com.rishabh.companyproject.Common;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.rishabh.companyproject.CombineActivities.LocationPermission;
 import com.rishabh.companyproject.Common.MainLoginSignup.MainLogin;
 import com.rishabh.companyproject.Database.SessionManager;
-import com.rishabh.companyproject.MainUser.Dashboard;
 import com.rishabh.companyproject.R;
-import com.rishabh.companyproject.User.MachineOwner.MachineOwnerApplyPage1;
-import com.rishabh.companyproject.User.MachineOwner.PartnerStartupPage;
 
 public class SplashScreen extends AppCompatActivity {
     private static int SPLASH_TIMER=5000;

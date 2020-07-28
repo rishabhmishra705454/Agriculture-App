@@ -1,4 +1,4 @@
-package com.rishabh.companyproject.Menu;
+package com.rishabh.companyproject.Profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,23 +8,22 @@ import android.widget.ImageView;
 
 import com.rishabh.companyproject.R;
 
-public class ReferAndEarn extends AppCompatActivity {
-
+public class PaymentsHistory extends AppCompatActivity {
     ImageView backPressed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_refer_and_earn);
+        setContentView(R.layout.activity_payments_history);
 
         //hooks
-        backPressed = findViewById(R.id.refer_back_pressed);
-        //function for back pressed
+        backPressed = findViewById(R.id.payment_back_pressed);
 
+        //back function
         backPressed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ReferAndEarn.super.onBackPressed();
+                PaymentsHistory.super.onBackPressed();
             }
         });
     }

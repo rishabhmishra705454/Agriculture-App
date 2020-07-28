@@ -1,4 +1,4 @@
-package com.rishabh.companyproject.Menu;
+package com.rishabh.companyproject.Profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;

@@ -1,22 +1,16 @@
-package com.rishabh.companyproject.User.MachineOwner;
+package com.rishabh.companyproject.Home.MachineApplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
 import com.google.android.material.textfield.TextInputLayout;
-import com.rishabh.companyproject.Common.LoginSignup.SignUp;
 import com.rishabh.companyproject.R;
 
 public class MachineOwnerApplyPage1 extends AppCompatActivity {

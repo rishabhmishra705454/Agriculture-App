@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rishabh.companyproject">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -16,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Services.LocationConfirmation"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -29,23 +28,23 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".MainUser.MapActivity" />
-        <activity android:name=".CombineActivities.LocationPermission" />
-        <activity android:name=".MainUser.MenuActivity" />
+        <activity android:name=".Services.MapActivity" />
+        <activity android:name=".Common.LocationPermission" />
+        <activity android:name=".Profile.MenuActivity" />
         <activity android:name=".MainUser.ServiceActivity" />
-        <activity android:name=".User.MachineOwner.MachineOwnerApplyPage2" />
-        <activity android:name=".User.MachineOwner.MachineOwnerApplyPage1" />
-        <activity android:name=".User.MachineOwner.PartnerStartupPage" />
-        <activity android:name=".User.Notification" />
-        <activity android:name=".Menu.UserProfile" />
-        <activity android:name=".MainUser.Dashboard" />
+        <activity android:name=".Home.MachineApplication.MachineOwnerApplyPage2" />
+        <activity android:name=".Home.MachineApplication.MachineOwnerApplyPage1" />
+        <activity android:name=".Home.MachineApplication.PartnerStartupPage" />
+        <activity android:name=".Home.Notification" />
+        <activity android:name=".Profile.UserProfile" />
+        <activity android:name=".Home.Dashboard" />
         <activity android:name=".Common.MainLoginSignup.MainOTPScreen" />
         <activity android:name=".Common.MainLoginSignup.MainLogin" />
-        <activity android:name=".Menu.AgrocabHistory" />
-        <activity android:name=".Menu.PaymentsHistory" />
-        <activity android:name=".Menu.ReferAndEarn" />
-        <activity android:name=".Menu.Support" />
-        <activity android:name=".User.MachineOwner.MachineOwnerApplySuccess" />
+        <activity android:name=".Profile.AgrocabHistory" />
+        <activity android:name=".Profile.PaymentsHistory" />
+        <activity android:name=".Profile.ReferAndEarn" />
+        <activity android:name=".Profile.Support" />
+        <activity android:name=".Home.MachineApplication.MachineOwnerApplySuccess" />
         <activity android:name=".Common.LoginSignup.SetNewPassword" />
         <activity android:name=".Common.LoginSignup.FPMakeSelection" />
         <activity android:name=".Common.LoginSignup.ForgetPassword" />

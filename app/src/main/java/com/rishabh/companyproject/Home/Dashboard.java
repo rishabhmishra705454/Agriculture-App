@@ -1,9 +1,8 @@
-package com.rishabh.companyproject.MainUser;
+package com.rishabh.companyproject.Home;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -11,20 +10,16 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.chip.Chip;
-import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 import com.rishabh.companyproject.HelperClass.DashboardSliderAdapter;
-import com.rishabh.companyproject.HelperClass.SliderAdapter;
-import com.rishabh.companyproject.Map.MapsFragmentCombineTracking;
+import com.rishabh.companyproject.Services.MapActivity;
+import com.rishabh.companyproject.Profile.MenuActivity;
 import com.rishabh.companyproject.R;
-import com.rishabh.companyproject.User.MachineOwner.PartnerStartupPage;
-import com.rishabh.companyproject.User.Notification;
+import com.rishabh.companyproject.Home.MachineApplication.PartnerStartupPage;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -95,7 +90,7 @@ public class Dashboard extends AppCompatActivity {
 
                     case R.id.menu:
                         startActivity(new Intent(getApplicationContext()
-                                ,MenuActivity.class));
+                                , MenuActivity.class));
                         finish();
                         overridePendingTransition(0,0);
                         return true;
