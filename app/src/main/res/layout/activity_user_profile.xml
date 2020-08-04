@@ -12,35 +12,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/page_top_bar"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:transitionName="transition_top_bar">
-
-            <!--<ImageView
-
-                android:id="@+id/notification_back_btn"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/back_btn_icon" /> -->
-
-            <TextView
-                android:id="@+id/profile_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-
-                android:fontFamily="@font/muli_black"
-                android:text="Profile "
-                android:textSize="18dp" />
-
-
-
-        </RelativeLayout>
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

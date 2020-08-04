@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.rishabh.companyproject.R;
+
 public class LocationConfirmation extends AppCompatActivity {
 
     @Override

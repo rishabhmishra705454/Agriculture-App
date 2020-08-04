@@ -22,10 +22,10 @@ import java.util.HashMap;
 
 public class MenuActivity extends AppCompatActivity {
 
-    TextView userFullName;
-    RelativeLayout userOffer;
+    TextView userFullName,userPhoneNo;
+    RelativeLayout userOffer,userPayment, userAgrocabHistory , userSupport;
 
-    EditText userPhoneNo,userEmail,userPincode,userAddress;
+    EditText userEmail,userPincode,userAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +38,14 @@ public class MenuActivity extends AppCompatActivity {
         //hooks
         userFullName = findViewById(R.id.user_fullname);
         userPhoneNo =findViewById(R.id.user_phone_no);
-        userEmail = findViewById(R.id._user_email);
-        userPincode = findViewById(R.id.user_pincode);
-        userAddress = findViewById(R.id.user_address);
+      //  userEmail = findViewById(R.id._user_email);
+       // userPincode = findViewById(R.id.user_pincode);
+      //  userAddress = findViewById(R.id.user_address);
 
-        userOffer = findViewById(R.id.profile_offer);
+       userOffer = findViewById(R.id.profile_offer);
+       userPayment = findViewById(R.id.profile_payment);
+       userAgrocabHistory = findViewById(R.id.profile_agrocab_history);
+       userSupport = findViewById(R.id.profile_support);
 
         //calling userOffer Screen
         userOffer.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +56,36 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        //calling payment screen
+        userPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), PaymentsHistory.class);
+                startActivity(intent);
+            }
+        });
+
+        // calling agrocab history screen
+
+        userAgrocabHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent  = new Intent(getApplicationContext(),AgrocabHistory.class);
+                startActivity(intent);
+            }
+        });
+
+        //calling support screen
+
+        userSupport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getApplicationContext(), Support.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
         //getting session
@@ -61,16 +94,16 @@ public class MenuActivity extends AppCompatActivity {
 
         String fullName = userDetails.get(SessionManager.KEY_FULLNAME);
         String phoneNo = userDetails.get(SessionManager.KEY_PHONENO);
-        String email = userDetails.get(SessionManager.KEY_EMAIL);
-        String pincode = userDetails.get(SessionManager.KEY_PINCODE);
-        String address = userDetails.get(SessionManager.KEY_ADDRESS);
+        //String email = userDetails.get(SessionManager.KEY_EMAIL);
+        //String pincode = userDetails.get(SessionManager.KEY_PINCODE);
+        //String address = userDetails.get(SessionManager.KEY_ADDRESS);
 
 
         userFullName.setText(fullName);
         userPhoneNo.setText(phoneNo);
-        userEmail.setText(email);
-        userPincode.setText(pincode);
-        userAddress.setText(address);
+       // userEmail.setText(email);
+        //userPincode.setText(pincode);
+       // userAddress.setText(address);
 
 
         //Initialize and asign varialble

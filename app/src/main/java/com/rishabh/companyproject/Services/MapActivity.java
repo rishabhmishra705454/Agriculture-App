@@ -87,21 +87,36 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             @Override
             public void onClick(View view) {
                 final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                        MapActivity.this,R.style.BottonSheetDialogTheme
+                        MapActivity.this, R.style.BottonSheetDialogTheme
                 );
                 View bottomSheetView = LayoutInflater.from(getApplicationContext())
                         .inflate(
                                 R.layout.services_bottom_sheet,
-                                (LinearLayout)findViewById(R.id.bottomSheetContainer)
+                                (LinearLayout) findViewById(R.id.bottomSheetContainer)
                         );
-                bottomSheetView.findViewById(R.id.harvesting_crop_card).setOnClickListener(new View.OnClickListener() {
+
+                Button locationConfirmBtn = findViewById(R.id.calling_harvesting_service);
+                locationConfirmBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MapActivity.this, "harvesting", Toast.LENGTH_SHORT).show();
-                        bottomSheetDialog.dismiss();
+                        Intent intent = new Intent(getApplicationContext(), LocationConfirmation.class);
+                        startActivity(intent);
                     }
                 });
 
+                /*
+                bottomSheetView.findViewById(R.id.harvesting_crop_card).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getApplicationContext(), LocationConfirmation.class);
+
+                        overridePendingTransition(0, 0);
+                        startActivity(intent);
+                    }
+                });
+
+
+                 */
                 bottomSheetDialog.setContentView(bottomSheetView);
                 bottomSheetDialog.show();
             }
@@ -112,11 +127,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         mapView = mapFragment.getView();
-
-
-       // BottomSheetMaoFragment bottomSheetMaoFragment=new BottomSheetMaoFragment();
-        //FragmentManager fragmentManager = getSupportFragmentManager();
-        //fragmentManager.beginTransaction().add(R.id.main_bottom,bottomSheetMaoFragment).commit();
 
 
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MapActivity.this);
@@ -164,7 +174,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mMap = googleMap;
         mMap.setMyLocationEnabled(true);
 
-      //Geting Combine lacation from firebae
+        //Geting Combine lacation from firebae
         subscribeToUpdates();
 
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
@@ -260,10 +270,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         for (Marker marker : mMarkers.values()) {
             builder.include(marker.getPosition());
         }
-       // mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 300));
+        // mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 300));
     }
-
-
 
 
     @Override

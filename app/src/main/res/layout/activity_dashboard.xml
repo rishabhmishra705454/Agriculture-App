@@ -265,10 +265,27 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/dashboard_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dashboard_top_card">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/support_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/main_slider_relative"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/dashboard_top_card"
+                android:layout_below="@id/dashboard_recycler_view"
                 android:layout_margin="15dp"
 
                 android:layout_marginBottom="20dp">
@@ -338,15 +355,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_below="@id/main_slider_relative"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/border_background">
+                >
 
-                <FrameLayout
-                    android:id="@+id/fragment_container"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:name="com.rishabh.companyproject.User.MenuDashboardFragment"
-                    tools:layout="@layout/fragment_menu_dashboard"/>
+                    android:textStyle="bold"
+                    android:paddingLeft="15dp"
+                    android:text="Future Upcoming"/>
+
+
 
 
 

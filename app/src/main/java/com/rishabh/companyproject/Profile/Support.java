@@ -31,7 +31,7 @@ public class Support extends AppCompatActivity {
         setContentView(R.layout.activity_support);
 
         //hooks
-        supportRecycler =findViewById(R.id.support_recycler);
+        // supportRecycler =findViewById(R.id.support_recycler);
         backBtn = findViewById(R.id.support_back_pressed);
         // support Back Button
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -41,9 +41,10 @@ public class Support extends AppCompatActivity {
             }
         });
         //function
-        supportRecycler();
+        // supportRecycler();
     }
-  //Support recycler view
+    //Support recycler view
+    /*
     private void supportRecycler() {
         supportRecycler.setHasFixedSize(true);
         supportRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -61,8 +62,8 @@ public class Support extends AppCompatActivity {
         adapter = new SupportAdapter(supportLocations);
         supportRecycler.setAdapter(adapter);
 
-
-    }
+        }
+     */
 
 
 }

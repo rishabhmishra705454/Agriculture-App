@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".Profile.MenuActivity">
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        style="bottomNa"
+
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_alignParentBottom="true"
@@ -24,278 +25,308 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <ScrollView
-        android:layout_above="@id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-
-            <RelativeLayout
-                android:id="@+id/dashboard_relative_top_nav"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:elevation="1dp">
+                android:layout_height="300dp"
+                android:background="#fece2f"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="40dp">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/user_icon"
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/profile_image"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:padding="10dp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/profile_icon"
-                    app:civ_border_width="1dp" />
-
+                    app:riv_border_color="@color/black"
+                    app:riv_border_width="1dp"
+                    app:riv_corner_radius="50dp" />
 
                 <TextView
                     android:id="@+id/user_fullname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/user_icon"
-                    android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:gravity="center"
+                    android:layout_toRightOf="@+id/profile_image"
+                    android:fontFamily="@font/baloo"
+                    android:includeFontPadding="false"
                     android:text="Rishabh Mishra"
-                    android:textColor="@color/black"
-                    android:textSize="24dp" />
+                    android:textColor="#000"
+                    android:textSize="20sp" />
 
-
-            </RelativeLayout>
-
-            <LinearLayout
-                android:id="@+id/profile_relative_view"
-                android:layout_width="300dp"
-                android:orientation="vertical"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/dashboard_relative_top_nav"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/border_background">
-
-                <EditText
+                <TextView
                     android:id="@+id/user_phone_no"
-                    android:layout_width="match_parent"
-                    android:textColor="@color/colorSecondaryText"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Phone Number"
-                    android:textSize="16sp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:textIsSelectable="false"
-                    android:padding="15dp"
-                    android:clickable="false"
-
-                    android:background="@drawable/border_background"
-
-                    />
-                <EditText
-                    android:id="@+id/_user_email"
-                    android:layout_width="match_parent"
-                    android:textColor="@color/colorSecondaryText"
-                    android:layout_height="wrap_content"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:textIsSelectable="false"
-                    android:clickable="false"
-                    android:hint="Email"
-                    android:background="@drawable/border_background"
-
-                  />
-
-                <EditText
-                    android:id="@+id/user_pincode"
-                    android:textSize="16sp"
-                    android:layout_width="match_parent"
-                    android:textColor="@color/colorSecondaryText"
-                    android:layout_height="wrap_content"
-                    android:hint="Pincode"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:textIsSelectable="false"
-                    android:clickable="false"
-                    android:padding="15dp"
-                    android:background="@drawable/border_background"
-                   />
-
-                <EditText
-                    android:id="@+id/user_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:textSize="16sp"
-
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:textIsSelectable="false"
-                    android:textColor="@color/colorSecondaryText"
-                    android:hint="Phone Address"
-                    android:padding="15dp"
-                    android:background="@drawable/border_background" />
-
+                    android:layout_below="@id/user_fullname"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/profile_image"
+                    android:includeFontPadding="false"
+                    android:text="+91 7054545683"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
-            <RelativeLayout
-                android:id="@+id/relative_layout_payment"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/profile_relative_view"
-                android:layout_marginTop="30dp"
-                android:gravity="center">
+                android:layout_marginTop="-100dp"
+                android:padding="20dp">
 
-                <RelativeLayout
-                    android:id="@+id/relative_payment_History"
-                    android:layout_width="120dp"
-                    android:layout_height="100dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/border_background"
-                    android:padding="20dp">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#fece2f"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="10dp">
 
-                    <ImageView
-                        android:id="@+id/agrocab_history_icon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/agrocab_history_icon" />
+                    <RelativeLayout
+                        android:id="@+id/profile_payment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="15dp"
+                        android:gravity="center">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/agrocab_history_icon"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/muli"
+                        <ImageView
+                            android:id="@+id/profile_payment_image"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/payment_icon" />
+
+                        <TextView
+                            android:id="@+id/payment_desc"
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/profile_payment_image"
+                            android:layout_centerHorizontal="true"
+                            android:includeFontPadding="false"
+                            android:text="Payments"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#fece2f"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/profile_agrocab_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Agrocabs\nHistory"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-                </RelativeLayout>
+                        android:padding="15dp">
 
-                <RelativeLayout
-                    android:id="@+id/relati"
-                    android:layout_width="120dp"
-                    android:layout_height="100dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="30dp"
-                    android:layout_toRightOf="@id/relative_payment_History"
-                    android:background="@drawable/border_background"
-                    android:gravity="center"
-                    android:padding="20dp">
+                        <ImageView
+                            android:id="@+id/profile_history_image"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/agrocab_history_icon" />
 
-                    <ImageView
-                        android:id="@+id/payment_history_icon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/payment_icon" />
+                        <TextView
+                            android:id="@+id/payment_desc2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/profile_history_image"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:includeFontPadding="false"
+                            android:text="History"
+                            android:textSize="20sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/payment_history_icon"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/muli"
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-40dp"
+
+                android:padding="20dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#fece2f"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/profile_support"
+                        android:layout_width="match_parent"
                         android:gravity="center"
-                        android:text="Payments"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-                </RelativeLayout>
+                        android:layout_height="match_parent"
+                        android:padding="15dp">
 
-            </RelativeLayout>
+                        <ImageView
+                            android:id="@+id/profile_support_image"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/payment_icon" />
+
+                        <TextView
+                            android:id="@+id/payment_desc3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@id/profile_support_image"
+                            android:layout_centerHorizontal="true"
+                            android:includeFontPadding="false"
+                            android:text="Support"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#fece2f"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/profile_offer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/profile_offer_image"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/payment_icon" />
+
+                        <TextView
+                            android:id="@+id/payment_desc4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/profile_offer_image"
+                            android:layout_centerHorizontal="true"
+                            android:includeFontPadding="false"
+                            android:layout_marginTop="10dp"
+                            android:text="Offers"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
 
 
             <RelativeLayout
+                android:id="@+id/dashboard_top_cardview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/relative_layout_payment"
-                android:layout_marginTop="10dp"
-                android:gravity="center">
+                android:layout_below="@id/dashboard_slider_layout"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/white">
 
-                <RelativeLayout
-                    android:id="@+id/profile_offer"
-                    android:layout_width="120dp"
-                    android:layout_height="100dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/border_background"
-                    android:gravity="center"
-                    android:padding="20dp">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:cardBackgroundColor="#ECF1FA"
+                    app:cardCornerRadius="4dp">
 
-                    <ImageView
-                        android:id="@+id/agrocab_offer_icon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/agrocab_history_icon" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/agrocab_offer_icon"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/muli"
-                        android:gravity="center"
-                        android:text="Offers"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/main_card_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/muli_black"
+                            android:text="Apply for Free harvesting"
+                            android:textSize="17dp" />
 
-                <RelativeLayout
-                    android:id="@+id/relative"
-                    android:layout_width="120dp"
-                    android:layout_height="100dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="30dp"
-                    android:layout_toRightOf="@id/profile_offer"
-                    android:background="@drawable/border_background"
-                    android:gravity="center"
-                    android:padding="20dp">
+                        <TextView
+                            android:id="@+id/main_card_desc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_card_title"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Get free Harvesting of crop, \nseeds and manures"
+                            android:textColor="@color/colorSecondaryText"
+                            android:textSize="16dp" />
 
-                    <ImageView
-                        android:id="@+id/payment_offer_icon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/payment_icon" />
+                        <Button
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/payment_offer_icon"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/muli"
-                        android:gravity="center"
-                        android:text="Support"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-                </RelativeLayout>
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_below="@id/main_card_desc"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/button_background"
+                            android:onClick="callServicePage"
+                            android:text="Apply"
+                            android:textColor="@color/white" />
 
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginEnd="11dp"
+                            android:layout_marginBottom="-3dp"
+                            android:src="@drawable/profit_man" />
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
             </RelativeLayout>
 
-    </LinearLayout>
+        </LinearLayout>
+
 
     </ScrollView>
-
-
 </RelativeLayout>

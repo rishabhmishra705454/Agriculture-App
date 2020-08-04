@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheetContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/bottomSheetContainer"
     android:background="@drawable/bottom_nav_backgraound"
     android:orientation="vertical">
 
@@ -30,127 +30,146 @@
         android:layout_marginRight="20dp"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
 
-<!--
+        <!--
+                    <Button
+                        android:id="@+id/harvesting_crop_card"
+                        android:layout_width="match_parent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_height="match_parent"
+                        android:background="#00000000"/>
+                        -->
+
+
+        <RelativeLayout
+            android:id="@+id/harvesting_crop_card"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+
+
+            android:background="@drawable/border_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal">
+
+
             <Button
-                android:id="@+id/harvesting_crop_card"
+                android:id="@+id/calling_harvesting_service"
                 android:layout_width="match_parent"
-                android:clickable="true"
-                android:focusable="true"
                 android:layout_height="match_parent"
                 android:background="#00000000"/>
-                -->
 
 
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/sercice_crop_img"
+                android:layout_width="175dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/harvesting_img"
+                app:riv_corner_radius_bottom_left="8dp"
+                app:riv_corner_radius_top_left="8dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#FFFFFF"
-                android:clickable="true"
-                android:focusable="true"
-                
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="horizontal">
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/sercice_crop_img"
+                android:gravity="center_vertical"
 
+                android:orientation="vertical">
 
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:layout_width="175dp"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/harvesting_img"
-                    app:riv_corner_radius="8dp" />
-
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:text="Harvesting Crop"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
-                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="* Free harvesting"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="15sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Harvesting Crop"
-                        android:textSize="17sp"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="* Free harvesting"
-                        android:textColor="@color/colorSecondaryText"
-                        android:textSize="15sp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorSecondary"
-                        android:text="\u20b9 400/Bigha"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\u20b9 400/Bigha"
+                    android:textColor="@color/colorSecondary"
+                    android:textStyle="bold" />
 
-                </LinearLayout>
+
             </LinearLayout>
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/border_background"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"/>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/sercice_sell_img"
+                android:layout_width="175dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/selling_grains"
+                app:riv_corner_radius_bottom_left="8dp"
+                app:riv_corner_radius_top_left="8dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/sercice_sell_img"
+                android:gravity="center_vertical"
 
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:layout_width="175dp"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/selling_grains"
-                    app:riv_corner_radius="8dp" />
+                android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:text="Selling Grains"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
-                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Free harvesting"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="15sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Selling Grains"
-                        android:textSize="17sp"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Free harvesting"
-                        android:textColor="@color/colorSecondaryText"
-                        android:textSize="15sp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorSecondary"
-                        android:text="\u20b9  --/Kg"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\u20b9  --/Kg"
+                    android:textColor="@color/colorSecondary"
+                    android:textStyle="bold" />
 
-                </LinearLayout>
             </LinearLayout>
+        </RelativeLayout>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Note: * It will apply when you sell crop at time of harvesting crop"/>
+            android:gravity="center"
+            android:text="Note: * It will apply when you sell crop at time of harvesting crop" />
 
     </LinearLayout>
 

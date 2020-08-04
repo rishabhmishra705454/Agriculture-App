@@ -20,8 +20,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-
-            android:layout_margin="10dp">
+>
 
             <ImageView
                 android:id="@+id/agrocab_back_pressed"
@@ -29,13 +28,14 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:padding="15dp"
-                android:src="@drawable/back_btn_icon" />
+                android:src="@drawable/white_back_icon" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:textColor="@color/white"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/agrocab_back_pressed"
                 android:fontFamily="@font/brandon_grotesque_black"

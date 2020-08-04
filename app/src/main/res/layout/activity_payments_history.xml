@@ -20,9 +20,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-
-            android:layout_margin="10dp">
+            android:layout_height="?actionBarSize">
 
             <ImageView
                 android:id="@+id/payment_back_pressed"
@@ -30,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:padding="15dp"
-                android:src="@drawable/back_btn_icon" />
+                android:src="@drawable/white_back_icon" />
 
 
             <TextView
@@ -41,6 +39,7 @@
                 android:layout_toRightOf="@id/payment_back_pressed"
                 android:fontFamily="@font/brandon_grotesque_black"
                 android:text="Payments History"
+                android:textColor="@color/white"
                 android:textSize="18dp" />
 
 
