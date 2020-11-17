@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.ResolvableApiException;
@@ -51,6 +52,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.rishabh.companyproject.Database.SessionManager;
 import com.rishabh.companyproject.Home.Dashboard;
 import com.rishabh.companyproject.Profile.MenuActivity;
 import com.rishabh.companyproject.R;
@@ -77,11 +79,14 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     private final float DEFAULT_ZOOM = 15;
 
+    TextView fullName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
+        fullName = findViewById(R.id.user_map_full_name);
         Button bottomSheet = findViewById(R.id.bottom_sheet_btn);
         bottomSheet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,34 +100,21 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                                 (LinearLayout) findViewById(R.id.bottomSheetContainer)
                         );
 
-                Button locationConfirmBtn = findViewById(R.id.calling_harvesting_service);
-                locationConfirmBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(getApplicationContext(), LocationConfirmation.class);
-                        startActivity(intent);
-                    }
-                });
-
-                /*
-                bottomSheetView.findViewById(R.id.harvesting_crop_card).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(getApplicationContext(), LocationConfirmation.class);
-
-                        overridePendingTransition(0, 0);
-                        startActivity(intent);
-                    }
-                });
 
 
-                 */
                 bottomSheetDialog.setContentView(bottomSheetView);
                 bottomSheetDialog.show();
             }
         });
 
 
+
+        SessionManager sessionManager = new SessionManager(this);
+        HashMap<String, String> userDetails = sessionManager.getUserDetailFromSession();
+
+        String userfullName = userDetails.get(SessionManager.KEY_FULLNAME);
+
+        fullName.setText(userfullName);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);

@@ -77,13 +77,6 @@ public class MenuActivity extends AppCompatActivity {
 
         //calling support screen
 
-        userSupport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(getApplicationContext(), Support.class);
-                startActivity(intent);
-            }
-        });
 
 
 

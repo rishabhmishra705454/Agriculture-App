@@ -22,7 +22,7 @@ public class Support extends AppCompatActivity {
 
     ImageView backBtn;
 
-    private GradientDrawable gradient1, gradient2, gradient3, gradient4;
+    private GradientDrawable gradient1, gradient2, gradient3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

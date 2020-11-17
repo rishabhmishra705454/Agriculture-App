@@ -48,11 +48,12 @@
 
 
         <TextView
+            android:id="@+id/user_map_full_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:padding="10dp"
-            android:text="Welcome Rishabh "
+            android:text="Welcome  "
             android:textSize="20dp"
             android:textStyle="bold" />
 
