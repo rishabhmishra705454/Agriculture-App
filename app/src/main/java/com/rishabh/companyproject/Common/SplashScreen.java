@@ -8,11 +8,12 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.rishabh.companyproject.Common.MainLoginSignup.MainLogin;
+import com.rishabh.companyproject.Common.NewLogin.SendOTPActivity;
 import com.rishabh.companyproject.Database.SessionManager;
 import com.rishabh.companyproject.R;
 
 public class SplashScreen extends AppCompatActivity {
-    private static int SPLASH_TIMER=5000;
+    private static int SPLASH_TIMER=2000;
 
     SharedPreferences onBoardingScreen;
 
@@ -45,23 +46,23 @@ public class SplashScreen extends AppCompatActivity {
 
                 else {
 
-                    SessionManager sessionManager = new SessionManager(SplashScreen.this);
-                    if (sessionManager.checkLogin() == true){
+            SessionManager sessionManager = new SessionManager(SplashScreen.this);
+            if (sessionManager.checkLogin() == true){
 
-                        Intent intent=new Intent(getApplicationContext(), LocationPermission.class);
-                        startActivity(intent);
-                        finish();
-                    } else {
+                Intent intent=new Intent(getApplicationContext(), LocationPermission.class);
+                startActivity(intent);
+                finish();
+            } else {
 
-                        Intent intent=new Intent(getApplicationContext(), MainLogin.class);
-                        startActivity(intent);
-                        finish();
-                    }
-
-
-                }
-
+                Intent intent=new Intent(getApplicationContext(), SendOTPActivity.class);
+                startActivity(intent);
+                finish();
             }
-        },SPLASH_TIMER);
+
+
+        }
+
+    }
+},SPLASH_TIMER);
     }
 }

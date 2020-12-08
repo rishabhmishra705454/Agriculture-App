@@ -23,6 +23,7 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 import com.rishabh.companyproject.Home.Dashboard;
 import com.rishabh.companyproject.R;
+import com.rishabh.companyproject.Services.MapActivity;
 
 public class LocationPermission extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class LocationPermission extends AppCompatActivity {
         setContentView(R.layout.activity_location_permission);
 
         if (ContextCompat.checkSelfPermission(LocationPermission.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            startActivity(new Intent(LocationPermission.this, Dashboard.class));
+            startActivity(new Intent(LocationPermission.this, MapActivity.class));
             finish();
             return;
         }
@@ -49,7 +50,7 @@ public class LocationPermission extends AppCompatActivity {
                         .withListener(new PermissionListener() {
                             @Override
                             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                                startActivity(new Intent(LocationPermission.this, Dashboard.class));
+                                startActivity(new Intent(LocationPermission.this, MapActivity.class));
                                 finish();
                             }
 

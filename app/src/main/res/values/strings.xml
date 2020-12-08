@@ -103,6 +103,19 @@
     <string name="slider_description_2"> You give grains at place of money. </string>
     <string name="slider_description_3">You can check all kind machinary on map.</string>
     <string name="slider_description_4">Farmers make partnership with us earn money.</string>
+    <string name="mobile_verification">Mobile Verification</string>
+    <string name="we_will_send_you_an_one_time_password_on_this_mobile_number">We will send you an one time password on this mobile number</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="_91">+91-</string>
+    <string name="_1234567890">1234567890</string>
+    <string name="enter_the_otp_sent_to">Enter the OTP sent to</string>
+    <string name="resend_otp">RESEND OTP</string>
+    <string name="did_t_not_receive_the_otp">Did\'t not receive the OTP !</string>
+    <string name="verify">Verify</string>
+
+
+    <string name="navigation_drawer_open"> Open navigation drawer</string>
+    <string name="navigation_drawer_close"> Close navigation drawer</string>
 
 
 </resources>

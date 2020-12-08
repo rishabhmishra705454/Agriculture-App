@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rishabh.companyproject.Common.MainLoginSignup.MainLogin;
+import com.rishabh.companyproject.Common.NewLogin.SendOTPActivity;
 import com.rishabh.companyproject.HelperClass.SliderAdapter;
 import com.rishabh.companyproject.R;
 
@@ -48,13 +49,13 @@ public class OnBoardingScreen extends AppCompatActivity {
     }
 
     public void skip(View view){
-        startActivity(new Intent(this, MainLogin.class));
+        startActivity(new Intent(this, SendOTPActivity.class));
         finish();
 
     }
 
     public void let_get_started(View view){
-        startActivity(new Intent(this, MainLogin.class));;
+        startActivity(new Intent(this, SendOTPActivity.class));;
         finish();
     }
 

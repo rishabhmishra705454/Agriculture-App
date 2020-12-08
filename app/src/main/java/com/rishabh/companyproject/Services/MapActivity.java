@@ -2,7 +2,11 @@ package com.rishabh.companyproject.Services;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,14 +14,17 @@ import android.content.IntentSender;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -32,6 +39,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -47,20 +56,25 @@ import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rishabh.companyproject.Database.SessionManager;
-import com.rishabh.companyproject.Home.Dashboard;
-import com.rishabh.companyproject.Profile.MenuActivity;
+import com.rishabh.companyproject.HelperClass.ServiceListnerInterface;
+import com.rishabh.companyproject.HelperClass.Services;
+import com.rishabh.companyproject.HelperClass.ServicesAdapter;
+import com.rishabh.companyproject.Profile.AgrocabHistory;
+import com.rishabh.companyproject.Profile.PaymentsHistory;
 import com.rishabh.companyproject.R;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MapActivity extends AppCompatActivity implements OnMapReadyCallback, ServiceListnerInterface, NavigationView.OnNavigationItemSelectedListener {
 
     private GoogleMap mMap;
 
@@ -77,16 +91,86 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private View mapView;
     // private Button btnFind
 
-    private final float DEFAULT_ZOOM = 15;
+    private final float DEFAULT_ZOOM = 17;
 
     TextView fullName;
+
+    //drawer layout variables
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    ImageView toolbar;
+
+    //Recycler viewbutton
+
+    Button buttonAddToWatchlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        // services recyclerview
 
-        fullName = findViewById(R.id.user_map_full_name);
+        buttonAddToWatchlist = findViewById(R.id.addToWatchlist);
+
+        RecyclerView servicesRecyclerView  = findViewById(R.id.serviceItemRecyclerView);
+        List<Services> services = new ArrayList<>();
+
+        Services the100 = new Services();
+        the100.image = R.drawable.harvesting_img;
+        the100.name = "Machinery";
+        services.add(the100);
+
+        Services the101 = new Services();
+        the100.image = R.drawable.selling_grains;
+        the100.name = "Sell Crop";
+        services.add(the101);
+
+        final ServicesAdapter servicesAdapter = new ServicesAdapter(services,this);
+        servicesRecyclerView.setAdapter(servicesAdapter);
+
+        buttonAddToWatchlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                List<Services> selectedServices = servicesAdapter.getSelectedServices();
+                StringBuilder servicesNames = new StringBuilder();
+                for (int i  = 0; i< selectedServices.size(); i++){
+                    if (i == 0){
+                        servicesNames.append(selectedServices.get(i).name);
+                    }else {
+                        servicesNames.append("\n").append(selectedServices.get(i).name);
+                    }
+                }
+
+                Toast.makeText(MapActivity.this, servicesNames.toString(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        //drawer hooks
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+
+        //toolbar
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+
+        //navigation drawer menu
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_home);
+
+        //bottom dialog sheet
+        //fullName = findViewById(R.id.user_map_full_name);
         Button bottomSheet = findViewById(R.id.bottom_sheet_btn);
         bottomSheet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,20 +185,17 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         );
 
 
-
                 bottomSheetDialog.setContentView(bottomSheetView);
                 bottomSheetDialog.show();
             }
         });
 
 
-
         SessionManager sessionManager = new SessionManager(this);
         HashMap<String, String> userDetails = sessionManager.getUserDetailFromSession();
-
-        String userfullName = userDetails.get(SessionManager.KEY_FULLNAME);
-
-        fullName.setText(userfullName);
+        //geting user detail from session
+        // String userfullName = userDetails.get(SessionManager.KEY_FULLNAME);
+       // fullName.setText(userfullName);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -127,43 +208,24 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         final AutocompleteSessionToken token = AutocompleteSessionToken.newInstance();
 
 
-        // Bottom NAVIGATION
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        //Set home selected
-        bottomNavigationView.setSelectedItemId(R.id.service);
-        //perform item selectedListner
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.dashboard:
-                        startActivity(new Intent(getApplicationContext()
-                                , Dashboard.class));
-                        finish();
-                        overridePendingTransition(0, 0);
-                        return true;
+    }
 
-                    case R.id.service:
-                        return true;
+    //On back pressed for navigation drawer
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
 
-                    case R.id.menu:
-                        startActivity(new Intent(getApplicationContext()
-                                , MenuActivity.class));
-                        finish();
-                        overridePendingTransition(0, 0);
-                        return true;
-
-
-                }
-                return false;
-            }
-        });
+            super.onBackPressed();
+        }
     }
 
     @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         mMap.setMyLocationEnabled(true);
 
         //Geting Combine lacation from firebae
@@ -213,6 +275,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         });
 
     }
+
+
 //Geting  location of combine on map from firebase
 
     private void subscribeToUpdates() {
@@ -243,6 +307,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         });
     }
 
+
     private void setMarker(DataSnapshot dataSnapshot) {
         // When a location update is received, put or update
         // its value in mMarkers, which contains all the markers
@@ -253,8 +318,14 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         double lat = Double.parseDouble(value.get("latitude").toString());
         double lng = Double.parseDouble(value.get("longitude").toString());
         LatLng location = new LatLng(lat, lng);
+
         if (!mMarkers.containsKey(key)) {
-            mMarkers.put(key, mMap.addMarker(new MarkerOptions().title(key).position(location)));
+            mMarkers.put(key, mMap.addMarker(new MarkerOptions()
+                    .title(key)
+                    .icon(BitmapDescriptorFactory.defaultMarker
+                            (BitmapDescriptorFactory.HUE_GREEN))
+                    .position(location)));
+
         } else {
             mMarkers.get(key).setPosition(location);
         }
@@ -313,5 +384,35 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
                     }
                 });
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                break;
+
+            case R.id.nav_bookings:
+                Intent intent = new Intent(MapActivity.this, AgrocabHistory.class);
+                startActivity(intent);
+                break;
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+
+    //Recycler View Services
+
+    @Override
+    public void selectserviceAction(Boolean isSelected) {
+
+        if (isSelected){
+            buttonAddToWatchlist.setVisibility(View.VISIBLE);
+        }else {
+            buttonAddToWatchlist.setVisibility(View.GONE);
+        }
+
     }
 }

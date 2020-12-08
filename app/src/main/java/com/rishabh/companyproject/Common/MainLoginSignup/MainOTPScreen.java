@@ -3,6 +3,7 @@ package com.rishabh.companyproject.Common.MainLoginSignup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.rishabh.companyproject.Common.LocationPermission;
 import com.rishabh.companyproject.Database.SessionManager;
+import com.rishabh.companyproject.Home.Dashboard;
 import com.rishabh.companyproject.Profile.UserProfile;
 import com.rishabh.companyproject.R;
 
@@ -94,12 +96,12 @@ public class MainOTPScreen extends AppCompatActivity {
     }
 
     // firebase phone authentication codes
-    private void sendVerificationCodeToUser(String phoneNo) {
+    private void sendVerificationCodeToUser(String userPhoneNo) {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                phoneNo,        // Phone number to verify
+                 "+91" + userPhoneNo,        // Phone number to verify
                 60,                 // Timeout duration
                 TimeUnit.SECONDS,   // Unit of timeout
-                TaskExecutors.MAIN_THREAD,               // Activity (for callback binding)
+                (Activity) TaskExecutors.MAIN_THREAD,               // Activity (for callback binding)
                 mCallbacks);        // OnVerificationStateChangedCallbacks
     }
 
@@ -149,7 +151,7 @@ public class MainOTPScreen extends AppCompatActivity {
 
                             //Intent intent = new Intent(getApplicationContext(), Dashboard.class);
                             //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            //intent.putExtra("phoneNo", phoneNo);
+                            //  intent.putExtra("phoneNo", userPhoneNo);
                             //startActivity(intent);
 
 

@@ -11,13 +11,6 @@
         <item name="background">@color/colorBackground</item>
     </style>
 
-    <!--menu style-->
-    <style name="navigation_theme">
-
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorControlHighlight">@color/black</item>
-    </style>
-
     <!--user dashboard-->
 
     <style name="dashboard">
@@ -25,17 +18,14 @@
 
     </style>
 
-    <style name="BottonSheetDialogTheme"  parent="Theme.Design.Light.BottomSheetDialog">
+    <style name="BottonSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
 
-    <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
     </style>
 
     <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@android:color/transparent</item>
     </style>
-
-
-
 
 
 </resources>

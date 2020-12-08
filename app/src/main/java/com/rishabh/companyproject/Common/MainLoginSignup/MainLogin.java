@@ -37,7 +37,7 @@ public class MainLogin extends AppCompatActivity {
 
 
         String _getUserEnteredPhoneNumber = phoneNumber.getEditText().getText().toString().trim();
-        String _phoneNo = "+91 " + _getUserEnteredPhoneNumber;
+        String _phoneNo = _getUserEnteredPhoneNumber;
 
         Intent intent = new Intent(getApplicationContext(), MainOTPScreen.class);
         //pass all data to next activity
