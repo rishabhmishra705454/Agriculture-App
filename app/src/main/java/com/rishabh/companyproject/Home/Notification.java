@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.rishabh.companyproject.R;
 
 public class Notification extends AppCompatActivity {
-    ImageView backBtn;
+    RelativeLayout backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,4 +26,7 @@ public class Notification extends AppCompatActivity {
             }
         });
     }
+
+
+    
 }

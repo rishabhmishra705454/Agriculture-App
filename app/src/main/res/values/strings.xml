@@ -3,6 +3,7 @@
 
     <!--onboarding strings-->
 
+
     <!--first screen-->
     <string name="our_mission_title">Our Mission</string>
     <string name="our_mission_desc">It is a Non profitable company which help poor  people and farmers.Our aim to solve problems faced  during farming.</string>
@@ -116,6 +117,7 @@
 
     <string name="navigation_drawer_open"> Open navigation drawer</string>
     <string name="navigation_drawer_close"> Close navigation drawer</string>
+    <string name="your_current_locaton">Your current locaton</string>
 
 
 </resources>

@@ -33,7 +33,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@id/notification_back_btn"
+                android:layout_toRightOf="@id/partner_page2_back_btn"
                 android:fontFamily="@font/muli_black"
                 android:text="Basic Details"
                 android:textSize="16dp" />

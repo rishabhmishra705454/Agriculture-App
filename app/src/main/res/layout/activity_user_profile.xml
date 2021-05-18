@@ -19,19 +19,39 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
+                android:layout_margin="20dp"
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
 
                     android:src="@drawable/profile_icon"
-                    app:civ_border_width="2dp"
+                    app:civ_border_color="#FF000000"
 
-                    app:civ_border_color="#FF000000"/>
+                    app:civ_border_width="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/baloo"
+                    android:gravity="center"
+                    android:text="Enter Account Information"
+                    android:textColor="@color/black"
+                    android:textSize="28dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/muli_semibold"
+                    android:text="Register yourself with us" />
 
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -39,7 +59,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Full Name"
+                    android:hint="Enter your full name"
                     app:boxStrokeColor="@color/colorPrimary"
                     app:startIconDrawable="@drawable/field_username_icon">
 
@@ -57,22 +77,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:hint="Phone Number"
                     android:clickable="false"
+                    android:hint="Phone Number"
 
                     app:boxStrokeColor="@color/colorPrimary"
                     app:startIconDrawable="@drawable/field_phone_icon">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
                         android:id="@+id/prodile_input_phoneno"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:clickable="false"
                         android:cursorVisible="false"
                         android:focusable="false"
-                        android:textIsSelectable="false"
-                        android:clickable="false"
                         android:inputType="text"
-                        android:maxLength="14" />
+                        android:maxLength="14"
+                        android:textIsSelectable="false" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,38 +117,38 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/profile_pincode"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    app:boxStrokeColor="@color/colorPrimary"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:hint="Area Pincode"
+                    app:boxStrokeColor="@color/colorPrimary"
                     app:startIconDrawable="@drawable/location_icon">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"
-                        android:maxLength="6"/>
+                        android:maxLength="6" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/profile_address"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    app:boxStrokeColor="@color/colorPrimary"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="150dp"
                     android:hint="Address"
-                    app:startIconDrawable="@drawable/address_icon"
-                    android:layout_marginBottom="150dp">
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:startIconDrawable="@drawable/address_icon">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"/>
+                        android:inputType="text" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 

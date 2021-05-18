@@ -45,6 +45,8 @@ public class VerifyOTPActivity extends AppCompatActivity {
     String userPhoneNo;
 
     String codeBySystem;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -187,6 +189,8 @@ public class VerifyOTPActivity extends AppCompatActivity {
 
     //adding ada to firebase
     private void isUser() {
+
+
 
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");

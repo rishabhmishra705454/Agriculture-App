@@ -17,17 +17,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:node="merge"
-        android:usesCleartextTraffic="true">
-
-        <activity android:name=".Common.NewLogin.VerifyOTPActivity"
+        android:usesCleartextTraffic="true"
+        tools:node="merge">
+        <activity android:name=".Services.Combine.CombineDetailsActivity"></activity>
+        <activity android:name=".Services.SellGrainActivity" />
+        <activity android:name=".Services.Combine.CombineActivity" />
+        <activity android:name=".Services.TractorActivity" />
+        <activity
+            android:name=".Common.NewLogin.VerifyOTPActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-
-        <activity android:name=".Common.NewLogin.SendOTPActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Common.NewLogin.SendOTPActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".Services.LocationConfirmation" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
